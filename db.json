@@ -1,144 +1,194 @@
 {
   "movies": [
     {
-      "id": "c595",
-      "title": "Hera Pheri",
-      "description": "Three unemployed men find the answer to all their money problems when they receive a call from a kidnapper.",
-      "releaseYear": "2000",
-      "genre": "Comedy",
-      "watched": true,
-      "rating": 5,
-      "review": "A classic comedy with unforgettable performances."
-    },
-    {
-      "id": "c596",
+      "id": "9496",
       "title": "The Dark Knight",
       "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
       "releaseYear": "2008",
       "genre": "Action",
       "watched": true,
       "rating": 5,
-      "review": "A dark and thrilling superhero film."
+      "review": "A dark and thrilling superhero film.",
+      "userId": "84be"
     },
     {
-      "id": "c597",
+      "id": "b628",
       "title": "3 Idiots",
       "description": "Two friends embark on a quest for a lost buddy. On this journey, they encounter a long forgotten bet, a wedding they must crash, and a funeral that goes impossibly out of control.",
       "releaseYear": "2009",
       "genre": "Comedy",
       "watched": true,
       "rating": 5,
-      "review": "Heartwarming and thought-provoking."
+      "review": "Heartwarming and thought-provoking.",
+      "userId": "1f0a"
     },
     {
-      "id": "c598",
+      "id": "a1b2",
+      "title": "Inception",
+      "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+      "releaseYear": "2010",
+      "genre": "Sci-Fi",
+      "watched": false,
+      "rating": 0,
+      "review": "",
+      "userId": "84be"
+    },
+    {
+      "id": "c3d4",
+      "title": "The Shawshank Redemption",
+      "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "releaseYear": "1994",
+      "genre": "Drama",
+      "watched": true,
+      "rating": 5,
+      "review": "An inspiring story of hope and friendship.",
+      "userId": "84be"
+    },
+    {
+      "id": "e5f6",
       "title": "Interstellar",
       "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
       "releaseYear": "2014",
       "genre": "Sci-Fi",
       "watched": true,
-      "rating": 5,
-      "review": "Epic and visually stunning."
+      "rating": 4,
+      "review": "A visually stunning journey through space and time.",
+      "userId": "1f0a"
     },
     {
-      "id": "c599",
-      "title": "Andaz Apna Apna",
-      "description": "Two slackers competing for the affections of an heiress inadvertently become involved in a plot to save the world.",
-      "releaseYear": "1994",
-      "genre": "Comedy",
+      "id": "g7h8",
+      "title": "The Pursuit of Happyness",
+      "description": "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional endeavor.",
+      "releaseYear": "2006",
+      "genre": "Biography",
+      "watched": false,
+      "rating": 0,
+      "review": "",
+      "userId": "1f0a"
+    },
+    {
+      "id": "i9j0",
+      "title": "The Godfather",
+      "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "releaseYear": "1972",
+      "genre": "Crime",
       "watched": true,
       "rating": 5,
-      "review": "A cult classic comedy with hilarious moments."
+      "review": "A masterpiece of cinema.",
+      "userId": "84be"
     },
     {
-      "id": "c600",
-      "title": "The Avengers",
-      "description": "Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.",
-      "releaseYear": "2012",
-      "genre": "Action",
+      "id": "k1l2",
+      "title": "Forrest Gump",
+      "description": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.",
+      "releaseYear": "1994",
+      "genre": "Drama",
+      "watched": false,
+      "rating": 0,
+      "review": "",
+      "userId": "1f0a"
+    },
+    {
+      "id": "m3n4",
+      "title": "The Matrix",
+      "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+      "releaseYear": "1999",
+      "genre": "Sci-Fi",
       "watched": true,
       "rating": 4,
-      "review": "Action-packed and entertaining."
+      "review": "A revolutionary film in science fiction.",
+      "userId": "84be"
     },
     {
-      "id": "c601",
-      "title": "Munna Bhai M.B.B.S.",
-      "description": "A gangster sets out to fulfill his father's dream of becoming a doctor despite having no formal education.",
-      "releaseYear": "2003",
-      "genre": "Comedy",
+      "id": "o5p6",
+      "title": "Fight Club",
+      "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.",
+      "releaseYear": "1999",
+      "genre": "Drama",
+      "watched": false,
+      "rating": 0,
+      "review": "",
+      "userId": "1f0a"
+    },
+    {
+      "id": "q7r8",
+      "title": "Gladiator",
+      "description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+      "releaseYear": "2000",
+      "genre": "Action",
       "watched": true,
       "rating": 5,
-      "review": "Heartwarming and hilarious."
+      "review": "A thrilling epic tale of revenge.",
+      "userId": "84be"
     },
     {
-      "id": "c602",
+      "id": "s9t0",
+      "title": "The Lord of the Rings: The Return of the King",
+      "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "releaseYear": "2003",
+      "genre": "Fantasy",
+      "watched": true,
+      "rating": 5,
+      "review": "A grand and satisfying conclusion to the trilogy.",
+      "userId": "1f0a"
+    },
+    {
+      "id": "t7u8",
+      "title": "Sholay",
+      "description": "Two criminals, Veeru and Jai, are hired by a retired police officer to capture the ruthless dacoit Gabbar Singh.",
+      "releaseYear": "1975",
+      "genre": "Action",
+      "watched": true,
+      "rating": 5,
+      "review": "A Bollywood classic.",
+      "userId": "1f0a"
+    },
+    {
+      "id": "v9w0",
+      "title": "Dangal",
+      "description": "Former wrestler Mahavir Singh Phogat and his two wrestler daughters struggle towards glory at the Commonwealth Games in the face of societal oppression.",
+      "releaseYear": "2016",
+      "genre": "Biography",
+      "watched": true,
+      "rating": 4,
+      "review": "An inspiring sports drama.",
+      "userId": "1f0a"
+    },
+    {
+      "id": "x1y2",
       "title": "Jurassic Park",
       "description": "During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.",
       "releaseYear": "1993",
       "genre": "Sci-Fi",
       "watched": true,
-      "rating": 5,
-      "review": "A groundbreaking and thrilling adventure."
-    },
-    {
-      "id": "c603",
-      "title": "Hera Pheri",
-      "description": "Three unemployed men find the answer to all their money problems when they receive a call from a kidnapper.",
-      "releaseYear": "2000",
-      "genre": "Comedy",
-      "watched": true,
-      "rating": 5,
-      "review": "A classic comedy with unforgettable performances."
-    },
-    {
-      "id": "c604",
-      "title": "The Pursuit of Happyness",
-      "description": "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career.",
-      "releaseYear": "2006",
-      "genre": "Drama",
-      "watched": true,
       "rating": 4,
-      "review": "Inspiring and heartfelt."
+      "review": "A thrilling adventure into the world of dinosaurs.",
+      "userId": "84be"
     },
     {
-      "id": "c605",
-      "title": "Chak De! India",
-      "description": "Kabir Khan is the coach of the Indian Women's National Hockey Team and dreams of winning the gold medal at the World Championship. However, he has lost the support of the board and most of the players. To make matters worse, he is constantly at odds with the team's captain, who wants to succeed on her own terms.",
-      "releaseYear": "2007",
-      "genre": "Drama",
+      "id": "z3a4",
+      "title": "Dilwale Dulhania Le Jayenge",
+      "description": "Raj and Simran meet during a trip across Europe and the two fall in love. However, when Raj learns that Simran is already promised to another, he follows her to India to win her and her father over.",
+      "releaseYear": "1995",
+      "genre": "Romance",
       "watched": true,
       "rating": 5,
-      "review": "Inspiring and motivational."
+      "review": "An iconic Bollywood romance.",
+      "userId": "1f0a"
+    }
+  ],
+  "users": [
+    {
+      "id": "1f0a",
+      "name": "naman",
+      "email": "naman@gmail.com",
+      "password": "$2a$10$AB9hzjuq9UHjboe8g4XXx.t.mO2wuUJbEweuZUavPcfJ/PoyZEt76"
     },
     {
-      "id": "c606",
-      "title": "The Grand Budapest Hotel",
-      "description": "A legendary concierge at a famous European hotel between the wars and his friendship with a young employee who becomes his trusted protégé.",
-      "releaseYear": "2014",
-      "genre": "Comedy",
-      "watched": true,
-      "rating": 4,
-      "review": "Quirky and visually delightful."
-    },
-    {
-      "id": "c607",
-      "title": "Andhadhun",
-      "description": "A series of mysterious events take place in the life of a blind pianist.",
-      "releaseYear": "2018",
-      "genre": "Thriller",
-      "watched": true,
-      "rating": 5,
-      "review": "A thrilling ride with unexpected twists."
-    },
-    {
-      "id": "8035",
-      "title": "Call of Duty",
-      "description": "An army of soldiers going on a war mission to rescue people in the local villages",
-      "releaseYear": "2012",
-      "genre": "Action",
-      "watched": true,
-      "rating": 1,
-      "review": "The movie was good. Need a more twist plot"
+      "id": "84be",
+      "name": "sujeet",
+      "email": "sujeet@gmail.com",
+      "password": "$2a$10$aoJ.3VyLxt1DtPiZm4IyZOpzmlv.CSftmKVFC0qwxrL2.HgSbu6F2"
     }
   ]
 }

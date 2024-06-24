@@ -1,52 +1,55 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getAllMovies, deleteMovieById } from "../../api";
+// movieSlice.js
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getAllMovies, deleteMovieById, addNewMovie, editExistingMovie } from "../../api";
 
 const initialState = {
   watchlist: [],
+  status: "idle",
+  error: null,
 };
+
+export const fetchMovies = createAsyncThunk("movies/fetchMovies", async (userId) => {
+  const moviesData = await getAllMovies(userId);
+  return moviesData;
+});
+
+export const removeMovie = createAsyncThunk("movies/removeMovie", async ({ userId, movieId }) => {
+  await deleteMovieById(movieId, userId);
+  return movieId;
+});
+
+export const addEditMovie = createAsyncThunk("movies/addEditMovie", async ({ userId, movie }) => {
+  if (movie.id) {
+    const updatedMovie = await editExistingMovie(movie, userId);
+    return updatedMovie;
+  } else {
+    const newMovie = await addNewMovie(movie, userId);
+    return newMovie;
+  }
+});
 
 const movieSlice = createSlice({
   name: "movies",
   initialState,
-  reducers: {
-    setMovies(state, action) {
-      state.watchlist = action.payload;
-    },
-    addMovie(state, action) {
-      state.watchlist.push(action.payload);
-    },
-    editMovie(state, action) {
-      const index = state.watchlist.findIndex((movie) => movie.id === action.payload.id);
-      if (index !== -1) {
-        state.watchlist[index] = action.payload;
-      }
-    },
-    deleteMovie(state, action) {
-      state.watchlist = state.watchlist.filter((movie) => movie.id !== action.payload);
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMovies.fulfilled, (state, action) => {
+        state.watchlist = action.payload;
+      })
+      .addCase(removeMovie.fulfilled, (state, action) => {
+        state.watchlist = state.watchlist.filter((movie) => movie.id !== action.payload);
+      })
+      .addCase(addEditMovie.fulfilled, (state, action) => {
+        const { id } = action.payload;
+        const existingMovieIndex = state.watchlist.findIndex((movie) => movie.id === id);
+        if (existingMovieIndex !== -1) {
+          state.watchlist[existingMovieIndex] = action.payload;
+        } else {
+          state.watchlist.push(action.payload);
+        }
+      });
   },
 });
-
-export const { setMovies, addMovie, editMovie, deleteMovie } = movieSlice.actions;
-
-// Async action to fetch movies
-export const fetchMovies = () => async (dispatch) => {
-  try {
-    const moviesData = await getAllMovies();
-    dispatch(setMovies(moviesData));
-  } catch (error) {
-    console.error("Error fetching movies:", error);
-  }
-};
-
-// Async action to delete a movie
-export const removeMovie = (movieId) => async (dispatch) => {
-  try {
-    await deleteMovieById(movieId);
-    dispatch(deleteMovie(movieId));
-  } catch (error) {
-    console.error("Error deleting movie:", error);
-  }
-};
 
 export default movieSlice.reducer;

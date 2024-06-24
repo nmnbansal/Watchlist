@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Modal,
   ModalOverlay,
@@ -9,11 +9,11 @@ import {
   ModalCloseButton,
   Button,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-const DeleteConfirmationModal = ({ isOpen, onClose, movieId, onDelete }) => {
+const DeleteConfirmationModal = ({ isOpen, onClose, onDelete }) => {
   const handleDelete = () => {
-    onDelete(movieId); // Call the onDelete function passed from props
+    onDelete();
   };
 
   return (
@@ -27,11 +27,9 @@ const DeleteConfirmationModal = ({ isOpen, onClose, movieId, onDelete }) => {
         </ModalBody>
         <ModalFooter>
           <Button colorScheme="red" mr={3} onClick={handleDelete}>
-            Confirm
+            Delete
           </Button>
-          <Button variant="ghost" onClick={onClose}>
-            Cancel
-          </Button>
+          <Button onClick={onClose}>Cancel</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

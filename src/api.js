@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000"; // Adjust as per your JSON Server port
+const API_URL = "https://json-server-7kfj.onrender.com";
 
 const axiosInstance = axios.create({
   baseURL: API_URL,
@@ -9,9 +9,11 @@ const axiosInstance = axios.create({
   },
 });
 
-export const getAllMovies = async () => {
+export const getAllMovies = async (userId) => {
   try {
-    const response = await axiosInstance.get("/movies");
+    const response = await axiosInstance.get(`/movies`, {
+      params: { userId }
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching movies:", error);
@@ -19,9 +21,9 @@ export const getAllMovies = async () => {
   }
 };
 
-export const addNewMovie = async (movie) => {
+export const addNewMovie = async (movie, userId) => {
   try {
-    const response = await axiosInstance.post("/movies", movie);
+    const response = await axiosInstance.post("/movies", { ...movie, userId });
     return response.data;
   } catch (error) {
     console.error("Error adding movie:", error);
@@ -29,9 +31,9 @@ export const addNewMovie = async (movie) => {
   }
 };
 
-export const editExistingMovie = async (movie) => {
+export const editExistingMovie = async (movie, userId) => {
   try {
-    const response = await axiosInstance.put(`/movies/${movie.id}`, movie);
+    const response = await axiosInstance.put(`/movies/${movie.id}`, { ...movie, userId });
     return response.data;
   } catch (error) {
     console.error("Error editing movie:", error);
@@ -39,12 +41,24 @@ export const editExistingMovie = async (movie) => {
   }
 };
 
-export const deleteMovieById = async (movieId) => {
+export const deleteMovieById = async (movieId, userId) => {
   try {
-    const response = await axiosInstance.delete(`/movies/${movieId}`);
+    const response = await axiosInstance.delete(`/movies/${movieId}`, {
+      data: { userId }
+    });
     return response.data;
   } catch (error) {
     console.error("Error deleting movie:", error);
+    return null;
+  }
+};
+
+export const getUserDetails = async (userId) => {
+  try {
+    const response = await axiosInstance.get(`/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user details:", error);
     return null;
   }
 };

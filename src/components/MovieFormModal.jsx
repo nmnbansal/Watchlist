@@ -1,5 +1,3 @@
-// MovieFormModal.js
-
 import React, { useState, useEffect } from "react";
 import {
   Modal,
@@ -21,9 +19,8 @@ import {
   FormErrorMessage,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { addMovie, editMovie } from "../features/movies/movieSlice";
 import { FaStar } from "react-icons/fa";
-import { editExistingMovie, addNewMovie } from "../api";
+import { addEditMovie } from "../features/movies/movieSlice";
 
 const initialMovieState = {
   title: "",
@@ -42,7 +39,7 @@ const MovieFormModal = ({ isOpen, onClose, movieId }) => {
   );
 
   const [movie, setMovie] = useState(initialMovieState);
-  const [ratingError, setRatingError] = useState(false); // State to track rating validation
+  const [ratingError, setRatingError] = useState(false);
 
   useEffect(() => {
     if (movieId && movieToEdit) {
@@ -72,7 +69,6 @@ const MovieFormModal = ({ isOpen, onClose, movieId }) => {
       ...prevMovie,
       rating,
     }));
-    // Clear rating error when a valid rating is selected
     if (ratingError && rating > 0) {
       setRatingError(false);
     }
@@ -82,23 +78,12 @@ const MovieFormModal = ({ isOpen, onClose, movieId }) => {
     e.preventDefault();
     if (movie.rating === 0) {
       setRatingError(true);
-      return; // Exit if rating is not selected
+      return;
     }
 
-    if (movieId) {
-      const updatedMovie = await editExistingMovie(movie);
-      if (updatedMovie) {
-        dispatch(editMovie(updatedMovie));
-        onClose();
-      }
-    } else {
-      const newMovie = await addNewMovie(movie);
-      if (newMovie) {
-        dispatch(addMovie(newMovie));
-        onClose();
-        setMovie(initialMovieState); // Clear form after adding a new movie
-      }
-    }
+    const userId = localStorage.getItem('token');
+    dispatch(addEditMovie({ userId, movie }));
+    onClose();
   };
 
   return (
@@ -146,8 +131,8 @@ const MovieFormModal = ({ isOpen, onClose, movieId }) => {
                 required
               />
             </FormControl>
-            <Flex mb={3} alignItems="center">
-              <FormControl display="flex" alignItems="center">
+            <Flex mb={3} alignItems="center" flexWrap="wrap">
+              <FormControl display="flex" alignItems="center" mb={[2, 0]}>
                 <FormLabel mb="0">Watched?</FormLabel>
                 <Switch
                   id="movie-watched"
