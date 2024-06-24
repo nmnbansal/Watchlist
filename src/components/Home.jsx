@@ -94,7 +94,7 @@ const Home = () => {
             _hover={{ bgGradient: "linear(to-r, teal.500, blue.500)" }}
             onClick={openAddMovieModal}
             mr={4}
-            mb={[2, 0]}
+            mb={[0, 0]}
           >
             Add Movie
           </Button>
